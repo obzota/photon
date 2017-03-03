@@ -1,0 +1,27 @@
+{
+  "name": "photon",
+  "version": "1.0.0",
+  "description": "Visualize dataset quickly",
+  "main": "main.js",
+  "scripts": {
+    "prestart": "node_modules/node-sass/bin/node-sass main.sass main.css",
+    "start": "electron ."
+  },
+  "repository": "",
+  "keywords": [
+    "Electron",
+    "photon",
+    "quick",
+    "start",
+    "datavis",
+    "viewer",
+    "3D"
+  ],
+  "author": "Obzota",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.4.1",
+    "d3": "^4.7.1",
+    "node-sass": "^4.5.0"
+  }
+}
