@@ -6,12 +6,14 @@ const d3 = require('d3');
 
 const Bubble = require('./scripts/bubbleplot');
 const Greyscale = require('./scripts/greyscaleplot');
-const Splom = require('./scripts/splom')
+const Splom = require('./scripts/splom');
 const Data = require('./scripts/data');
+
+const clusters = require('./scripts/clusters');
 
 const axis = require('./scripts/axis');
 
-require('./scripts/dragndrop')
+require('./scripts/dragndrop');
 
 const BUBBLE = 0;
 const GREYSCALE = 1;
@@ -28,6 +30,7 @@ function render() {
 		case GREYSCALE: Greyscale.draw(Data.retrieve()); break;
 		case SPLOM: Splom.draw(Data.retrieve()); break;
 	}
+	clusters.draw(Data.getCenters());
 }
 
 ipc.on('command-render', render);

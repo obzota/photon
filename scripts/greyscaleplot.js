@@ -1,14 +1,14 @@
 const d3 = require('d3');
+
 const axis = require('./axis');
+const scale = require('./plotscale');
 
 let greyscale = function(z) {
 	let scale = d3.scaleLinear().domain([-10,10]).range([50, 250]);
 	let x  = Math.floor(scale(z));
+	//return "rgb("+(250-x)+","+(250-x)+","+x+")"
 	return "rgb("+x+","+x+","+x+")"
 }
-
-let scaleX = d3.scaleLinear().domain([-10,10]).range([0,800]);
-let scaleY = d3.scaleLinear().domain([-10,10]).range([800,0]);
 
 function greyscaleplot(data) {
 
@@ -17,8 +17,8 @@ function greyscaleplot(data) {
 
 	circles.merge(newCircles)
 		.transition(500)
-	    .attr('cx', (d)=>(scaleX(d[axis.get('x')])))
-	    .attr('cy', (d)=>(scaleY(d[axis.get('y')])))
+	    .attr('cx', (d)=>(scale.x(d[axis.get('x')])))
+	    .attr('cy', (d)=>(scale.y(d[axis.get('y')])))
 	    .attr('r', (d)=>(3))
 	    .attr('stroke-opacity', '0.0')
 	    .attr('fill', (d)=>(greyscale(d[axis.get('z')])))

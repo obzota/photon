@@ -38,6 +38,19 @@ menu.append(new MenuItem({
     }
 }));
 
+menu.append(new MenuItem({
+  type: 'separator'
+}));
+
+menu.append(new MenuItem({
+  label: 'Show centers',
+  click: function (item, focusedWindow) {
+      if (focusedWindow) {
+        focusedWindow.webContents.send("toggle-cluster");
+      }
+    }
+}));
+
 app.on('browser-window-created', function (event, win) {
   win.webContents.on('context-menu', function (e, params) {
     menu.popup(win, params.x, params.y)
