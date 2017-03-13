@@ -22,8 +22,8 @@ exports.load = function (path) {
 				x: +datum[0],
 				y: +datum[1],
 				z: +datum[2],
-				a: +datum[3],
-				b: +datum[4]
+				w: +datum[3],
+				v: +datum[4]
 			}
 			return d;
 		});

@@ -1,5 +1,5 @@
 const d3 = require('d3');
-const axis = require('./axis_reduced');
+const axis = require('./axis');
 
 const scale = require('./plotscale');
 const palette = require('./palette');
@@ -17,18 +17,17 @@ function bubbleplot(data) {
     newCircles = circles.enter().append('circle')
 
     // permutation of variables
-    let a = axis.get('a');
-    let b = axis.get('b');
     let x = axis.get('x');
     let y = axis.get('y');
     let z = axis.get('z');
+    let w = axis.get('w');
 
     circles.merge(newCircles)
         .transition(500)
-        .attr('cx', (d)=>(scale.screenX(d[a])))
-        .attr('cy', (d)=>(scale.screenY(d[b])))
-        .attr('r', (d)=>(scale.radius(d[x])))
-        .attr('stroke', (d)=>(colorScale(d[y])))
+        .attr('cx', (d)=>(scale.screenX(d[x])))
+        .attr('cy', (d)=>(scale.screenY(d[y])))
+        .attr('r', (d)=>(scale.radius(d[z])))
+        .attr('stroke', (d)=>(colorScale(d[w])))
         .attr('stroke-opacity', '1.0')
         .attr('stroke-width', '4px')
         .attr('fill-opacity', '0.0');

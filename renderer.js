@@ -7,7 +7,7 @@ const d3 = require('d3');
 const Bubble = require('./scripts/bubbleplot');
 const Splom = require('./scripts/splom');
 const Data = require('./scripts/data');
-const axis = require('./scripts/axis_reduced');
+const axis = require('./scripts/axis');
 
 require('./scripts/dragndrop');
 
