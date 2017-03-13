@@ -1,6 +1,5 @@
 const remote = require('electron').remote;
 const fs = remote.require('fs');
-
 const d3 = require('d3')
 const ipc = require('electron').ipcRenderer
 
@@ -23,10 +22,8 @@ exports.load = function (path) {
 				x: +datum[0],
 				y: +datum[1],
 				z: +datum[2],
-				cluster: +datum[3]
-			}
-			if(d.cluster > 10) {
-				centers.push(d);
+				a: +datum[3],
+				b: +datum[4]
 			}
 			return d;
 		});

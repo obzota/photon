@@ -19,7 +19,7 @@ exports.draw = function (data) {
 	    .attr('cx', (d) => ( scaleX( d[axis.get('x')] ) ) )
 	    .attr('cy', (d) => ( scaleY( d[axis.get('y')] ) ) )
 	    .attr('r', (d) => (3))
-	    .attr('fill', (d)=>(d.color ? d.color:palette.green))
+	    .attr('fill', (d)=>(d.color ? d.color:palette.gray))
 	    .attr('fill-opacity', 0.8)
 	    .attr('stroke-opacity', 0.0);
 

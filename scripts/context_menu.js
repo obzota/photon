@@ -19,16 +19,6 @@ menu.append(new MenuItem({
 }));
 
 menu.append(new MenuItem({
-	label: 'Grey scale',
-	type: 'radio',
-	click: function (item, focusedWindow) {
-      if (focusedWindow) {
-        focusedWindow.webContents.send("draw-greyscale");
-      }
-    }
-}));
-
-menu.append(new MenuItem({
 	label: 'Scatterplot matrix',
 	type: 'radio',
 	click: function (item, focusedWindow) {

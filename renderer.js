@@ -5,19 +5,14 @@ const ipc = require('electron').ipcRenderer;
 const d3 = require('d3');
 
 const Bubble = require('./scripts/bubbleplot');
-const Greyscale = require('./scripts/greyscaleplot');
 const Splom = require('./scripts/splom');
 const Data = require('./scripts/data');
-
-const clusters = require('./scripts/clusters');
-
-const axis = require('./scripts/axis');
+const axis = require('./scripts/axis_reduced');
 
 require('./scripts/dragndrop');
 
 const BUBBLE = 0;
-const GREYSCALE = 1;
-const SPLOM = 2
+const SPLOM = 1;
 
 let plot = 0;
 
@@ -27,10 +22,8 @@ let plot = 0;
 function render() {
 	switch (plot) {
 		case BUBBLE: Bubble.draw(Data.retrieve()); break;
-		case GREYSCALE: Greyscale.draw(Data.retrieve()); break;
 		case SPLOM: Splom.draw(Data.retrieve()); break;
 	}
-	clusters.draw(Data.getCenters());
 }
 
 ipc.on('command-render', render);
@@ -40,11 +33,6 @@ ipc.on('command-render', render);
 //
 ipc.on('draw-bubble', function() {
 	plot = BUBBLE;
-	render();
-});
-
-ipc.on('draw-greyscale', function() {
-	plot = GREYSCALE;
 	render();
 });
 
