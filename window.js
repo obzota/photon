@@ -4,8 +4,7 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
-const system = require('./scripts/system')
-require('./scripts/context_menu')
+const system = require('./app/system/system')
 
 const path = require('path')
 const url = require('url')
@@ -14,7 +13,7 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-function createWindow () {
+exports.create = function (html) {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 800})
 
@@ -22,7 +21,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, html),
     protocol: 'file:',
     slashes: true
   }))
@@ -37,11 +36,6 @@ function createWindow () {
 
   system.register(mainWindow);
 }
-
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {

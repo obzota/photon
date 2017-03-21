@@ -4,12 +4,12 @@
 const ipc = require('electron').ipcRenderer;
 const d3 = require('d3');
 
-const Bubble = require('./scripts/bubbleplot');
-const Splom = require('./scripts/splom');
-const Data = require('./scripts/data');
-const axis = require('./scripts/axis');
+const Bubble = require('../bubble/bubbleplot');
+const Splom = require('../splom/splom');
+const Data = require('../core/data');
+const axis = require('../core/axis');
 
-require('./scripts/dragndrop');
+require('../core/dragndrop');
 
 const BUBBLE = 0;
 const SPLOM = 1;

@@ -1,6 +1,7 @@
 const d3 = require('d3');
-const palette = require('./palette');
-const scale = require('./plotscale');
+
+const palette = require('../core/palette');
+const scale = require('../core/plotscale');
 
 exports.draw = function (data) {
 	let updatedData = buildFullData(data);
