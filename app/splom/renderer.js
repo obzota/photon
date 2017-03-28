@@ -1,4 +1,4 @@
 const exp = require('../exp/renderer')
 
 
-exp.initialize(require('./bubbleplot'));
+exp.initialize(require('./splom'));

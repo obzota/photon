@@ -5,7 +5,9 @@
   "main": "demo.js",
   "scripts": {
     "prestart": "node_modules/node-sass/bin/node-sass style/main.sass style/main.css",
-    "start": "electron ."
+    "start": "electron .",
+    "bubble": "electron bubble",
+    "splom": "electron splom"
   },
   "repository": "",
   "keywords": [

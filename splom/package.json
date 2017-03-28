@@ -1,0 +1,20 @@
+{
+  "name": "photon",
+  "version": "1.0.0",
+  "description": "Visualize dataset quickly",
+  "main": "splom.js",
+  "repository": "",
+  "keywords": [
+    "Electron",
+    "photon",
+    "quick",
+    "start",
+    "datavis",
+    "viewer",
+    "3D"
+  ],
+  "author": "Obzota",
+  "license": "CC0-1.0",
+  "devDependencies": {
+  }
+}
